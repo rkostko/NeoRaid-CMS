@@ -1,0 +1,15 @@
+<IfModule mod_rewrite.c>
+RewriteEngine On 
+#RewriteBase /
+RewriteRule ^/?([a-z0-9_-]*),([a-z0-9_-]*),([a-z0-9_-]*),([a-z0-9_-]*),([a-z0-9_-]*),([a-z0-9_-]*),([a-z0-9-_\.]*)$ $7?argStr=$1,$2,$3,$4,$5,$6 [NC,L]
+RewriteRule ^/?([a-z0-9_-]*),([a-z0-9_-]*),([a-z0-9_-]*),([a-z0-9_-]*),([a-z0-9_-]*),([a-z0-9-_\.]*)$ $6?argStr=$1,$2,$3,$4,$5 [NC,L]
+RewriteRule ^/?([a-z0-9_-]*),([a-z0-9_-]*),([a-z0-9_-]*),([a-z0-9_-]*),([a-z0-9-_\.]*)$ $5?argStr=$1,$2,$3,$4 [NC,L]
+RewriteRule ^/?([a-z0-9_-]*),([a-z0-9_-]*),([a-z0-9_-]*),([a-z0-9-_\.]*)$ $4?argStr=$1,$2,$3 [NC,L]
+RewriteRule ^/?([a-z0-9_-]*),([a-z0-9_-]*),([a-z0-9-_\.]*)$ $3?argStr=$1,$2 [NC,L]
+RewriteRule ^/?([a-z0-9_-]*),([a-z0-9-_\.]*)$ $2?argStr=$1 [NC,L]
+RewriteRule ^/?([a-z0-9-_\.]*)$ $1 [NC,L]
+RewriteRule ^/?(/?[a-z0-9-_\.]*/?)([a-z0-9-_\.]*)$ $1$2 [NC,L]
+RewriteRule ^/?(/?[a-z0-9-_\.]*/?)([a-z0-9_-]*),([a-z0-9-_\.]*)$ $1$3?argStr=$2 [NC,L]
+php_value include_path ".;/;../;./"
+php_value auto_prepend_file mr.php
+</IfModule>

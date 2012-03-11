@@ -1,0 +1,239 @@
+/* CSS Document */
+
+body {
+	font: normal 13px arial, tahoma, helvetica, sans-serif;
+
+}
+#processing {
+	position:fixed;
+	bottom:0;
+	min-width:250px;
+	width:50%;
+	left:25%;
+	display:none;
+	opacity:0.9;
+	padding:8px;
+	
+}
+.contextMenu {
+	display:none;
+	position:absolute;
+	background:#fff;
+	border:#999 1px solid;
+	width:auto;
+	height:auto;
+	z-index:499;
+	opacity:0.9;	
+}
+.contextMenu li {
+	list-style-type:none;
+	text-align:left;
+	padding:5px;
+}
+
+/* to much space in Internet Explorer 7 */
+*+ html .contextMenu li {
+	padding-bottom: 0;
+}
+
+.contextMenu li:Hover {
+	background-color:#0066CC;
+	color:#FFFFFF;
+	cursor:pointer;
+}
+#pdfTree, #helpSubjects{
+	float:left;
+	/*width:436px;*/
+	/*height:500px;*/
+	clear:both;
+	overflow:visible;
+	/*border: 1px solid blue;*/
+}
+
+
+#header{
+	height:75px;
+}
+.ajaxInfo, .info{
+	text-align:center;
+	background-color:#FF5511; /*3366CC;*/
+	font-size:16px;
+	font-weight:bold;
+	color:#FFFFFF;
+}
+#activeElement {
+	text-align:center;
+	padding-top:4px;
+	min-width:250px;
+	width:25%;
+	left:37%;
+	font-size:14px;
+	height:20px;
+	margin-bottom:15px;
+	margin-top:15px;
+}
+#wrap{
+	/*width:100%;*/
+	clear:both;
+	float: left;
+	width:auto;
+}
+
+#annualWizard {
+    width: auto;
+	float: left;	
+}
+
+.root{
+	color:#036AC2;
+	font-size:13px;
+}
+
+/* TOP IMAGE MENU TOOLTIP */
+#tooltip{
+	position:absolute;
+	border:1px solid #333;
+	background:#f7f5d1;
+	width: 156px;
+	height:36px;
+	display:none;
+}
+
+.ui-corner-all {
+-moz-border-radius-bottomleft:4px;
+-moz-border-radius-bottomright:4px;
+-moz-border-radius-topleft:4px;
+-moz-border-radius-topright:4px;
+}
+
+.ui-widget-content {
+-moz-background-clip:border;
+-moz-background-inline-policy:continuous;
+-moz-background-origin:padding;
+background:#FFFFFF url(images/ui-bg_flat_75_ffffff_40x100.png) repeat-x scroll 50% 50%;
+border:1px solid #AAAAAA;
+color:#222222;
+}
+
+
+/* GALLERY CONTAINER */
+
+/*.sig {
+	clear:both;
+	margin:16px 4px;
+	padding:0px;
+	display:table-cell;*/
+}
+
+.sig_clr {
+	clear:both;
+}
+
+.sig_cont {
+	float:left;
+	display:block;
+}
+
+.sig_thumb {
+	float:left;
+	/*margin-bottom:20px;*/
+	padding:0px;
+	background:url(../../icons/shadowAlpha.png) no-repeat bottom right !important;
+	background:url(../../icons/shadow.gif) no-repeat bottom right;
+}
+
+#contentLeft {
+	float: left;
+	width: 100%;
+	margin-left:-40px;
+}
+
+#contentLeft li {
+	list-style: none;
+	margin: 0 0 4px 4px;
+	background-color:#ffffff;
+	border: #bababa solid 1px;
+	color:#fff;
+	/*padding-bottom: 5px;*/
+}
+
+#contentLeft li div a img {
+	display:block;
+	position:relative;
+	border: medium none;
+	/*background:#FFF;
+	margin:-5px 5px 5px -5px;
+	padding:4px;*/
+}
+
+.div_fade {
+/* opacity setting */
+    -ms-filter:"progid:DXImageTransform.Microsoft.Alpha(Opacity=80)"; /* first! for ie8 */
+     filter: alpha(opacity=80);     /* second! for other ie versions */ 
+    -moz-opacity:0.8;    /* old mozilla browser like netscape  */
+    -khtml-opacity: 0.8;    /* for really really old safari */  
+    opacity: 0.8;    /* css standard, currently it works in most modern browsers like firefox,  */
+} 
+.rte-buttons {
+    float: left;
+    clear: both;
+}
+.rte-edit { 
+	border: 1px solid #fdfdfd;
+	display: block; 
+	width: 24px; 
+	height: 17px; 
+	background: url('icons.png') no-repeat 0 -653px; 
+	cursor: pointer; 
+	margin: 2px;
+	padding: 0;
+    /*float: left;*/
+    clear: both; 
+}
+
+.okbutton_hover {
+    background: url("themes/base/images/ui-bg_glass_75_dadada_1x400.png") repeat-x scroll 50% 50% #DADADA;
+    border: 1px solid #999999;
+    color: #0EBA01;
+    font-weight: bold;
+}
+
+.okbutton {
+    background-color: transparent;
+    margin-left: 20px;
+    border: medium none;
+    border-bottom-left-radius: 4px;
+    border-bottom-right-radius: 4px;
+    border-top-left-radius: 4px;
+    border-top-right-radius: 4px;
+    font-size: 12px;
+    font-family: Tahoma; 
+}
+
+.dimensions span {
+    font-size: 12px;
+    font-family: Tahoma; 
+}
+
+.common_icons {
+    border: medium none;
+    float:left; 
+    margin:3px;
+    cursor:pointer;
+}
+
+.date_input {
+    width: 110px;
+    float:left;
+}
+
+.datepicker {
+    float:left;
+    width: 90px;
+    border: medium none;
+    color: #dd0000;
+}
+
+.ui-datepicker-trigger {
+    float: left;
+}

@@ -1,0 +1,70 @@
+body {
+background: url(../images/body.gif)
+}
+
+.sceleton {
+width: 100%;
+}
+
+.container {
+width: 876px;
+margin: 0 auto 0 auto;
+padding-top: 0px;
+padding-bottom: 0;
+padding-left: 0;
+padding-right: 0;
+}
+
+/*.head_image {
+width: 876px;
+height: 202px;
+background: #ddd url(../images/header.jpg) no-repeat;
+}*/
+
+.content {
+font: 10pt normal Verdana, Helvetica, sans-serif;
+padding: 5px;
+background: #ddd;
+float: left;
+width:866px;
+}
+
+.content h1 {
+    font-size: 12pt;
+    text-align: center;
+}
+
+.newsitem {
+margin-bottom: 5px;    
+}
+img.noborder {
+border: none;
+margin: 5px;
+clear: both;
+}
+
+.galmore_next {
+    float:right; 
+    margin:10px  
+}
+
+.galmore_prev {
+    float:left; 
+    margin:10px  
+}
+
+a:link {
+    text-decoration: none;
+}
+
+a:hover {
+    color: red;
+}
+
+div .sponsorzy {
+	float:left; 
+	text-align:center; 
+	padding:20px; 
+	margin: 0 auto 0 auto; 
+	clear: both;
+}

@@ -1,0 +1,93 @@
+<?php
+    	include_once("config.inc.php");
+    	include_once("connect_db.php");
+    	
+include_once("content.php");
+
+$init = new contentProcessor();
+
+
+?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>NeoRaid Rally Team</title>
+<link rel="stylesheet" type="text/css" href="css/main.css" />
+<link rel="stylesheet" type="text/css" href="css/picbox.css" />
+
+<!-- link rel="stylesheet" type="text/css" href="css/jqueryslidemenu.css" / -->
+<link rel="stylesheet" type="text/css" href="css/ddsmoothmenu.css" />
+<link rel="stylesheet" type="text/css" href="css/ddsmoothmenu-v.css" />
+
+<script type="text/javascript" src="jquery/jquery-1.4.4.min.js"></script>
+<script type="text/javascript" src="jquery/jquery.infinitecarousel2.js"></script>
+<script type="text/javascript" src="jquery/jquery.easing.1.3.js"></script> 
+<!--[if lte IE 7]>
+<style type="text/css">
+html .jqueryslidemenu{height: 1%;} /*Holly Hack for IE7 and below*/
+</style>
+<![endif]-->
+
+<!-- script type="text/javascript" src="jquery/jqueryslidemenu.js"></script -->
+<script type="text/javascript" src="jquery/ddsmoothmenu.js"></script>
+<script type="text/javascript" src="jquery/picbox.js"></script>
+<script type="text/javascript">
+
+ddsmoothmenu.init({
+	mainmenuid: "smoothmenu1", //menu DIV id
+	orientation: 'h', //Horizontal or vertical menu: Set to "h" or "v"
+	classname: 'ddsmoothmenu', //class added to menu's outer DIV
+	//customtheme: ["#1c5a80", "#18374a"],
+	contentsource: "markup" //"markup" or ["container_id", "path_to_menu_file"]
+});
+</script>
+</head>
+
+<body>
+<div class="sceleton">
+	<div class="container">
+<?php
+include_once('top.php');
+include_once('menu.php');
+?>
+		<div class="content">
+<?php
+
+
+$gallery = ''; 
+$gallery .= (isset($ARG0) && !empty($ARG0))? $ARG0 : '';
+
+$gallery .= (isset($ARG1) && !empty($ARG1))? ','.$ARG1 : '';
+
+$gallery .= (isset($ARG2) && !empty($ARG2))? ','.$ARG2 : '';
+$gallery .= (isset($ARG3) && !empty($ARG3))? ','.$ARG3 : '';
+if(!empty($gallery))
+{
+	/*if(!isset($ARG2) || (int)$ARG2 == 1)
+	{		
+		echo "\n{articles}";
+		echo (strpos($gallery, ',') !== false)? substr($gallery, 0, strpos($gallery, ',')) : $gallery;
+		echo "{/articles}\n"; 
+	}*/
+	print("\n{galleries}");
+	echo $gallery;
+	print("{/galleries}\n");
+    if(!isset($ARG2) || (int)$ARG2 == 1)
+	{		
+		echo "\n{movies}";
+		echo (strpos($gallery, ',') !== false)? substr($gallery, 0, strpos($gallery, ',')) : $gallery;
+		echo "{/movies}\n"; 
+	}
+}
+?>
+		</div>
+	</div>
+</div>
+</body>
+</html>
+<?php
+
+ob_end_flush();
+
+?>
