@@ -19,10 +19,13 @@ $init = new contentProcessor();
 <link rel="stylesheet" type="text/css" href="css/news.css" />
 <link rel="stylesheet" type="text/css" href="css/ddsmoothmenu.css" />
 <link rel="stylesheet" type="text/css" href="css/ddsmoothmenu-v.css" />
+<link rel="stylesheet" type="text/css" href="css/skins/ie7/skin.css" />
 
 <script type="text/javascript" src="jquery/jquery-1.4.4.min.js"></script>
-<script type="text/javascript" src="jquery/jquery.infinitecarousel2.js"></script>
-<script type="text/javascript" src="jquery/jquery.easing.1.3.js"></script> 
+<!-- script type="text/javascript" src="jquery/jquery.infinitecarousel2.js"></script -->
+<!-- script type="text/javascript" src="jquery/jquery.infinitecarousel3.js"></script -->
+<!-- script type="text/javascript" src="jquery/jquery.jcarousel3.js"></script -->
+<script type="text/javascript" src="jquery/jquery.jcarousel.js"></script> 
 <!--[if lte IE 7]>
 <style type="text/css">
 html .jqueryslidemenu{height: 1%;} /*Holly Hack for IE7 and below*/

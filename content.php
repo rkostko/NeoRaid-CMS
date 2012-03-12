@@ -408,13 +408,17 @@ class contentProcessor
     private function _getSliders($buffer)
 	{
 		  $html = '';	
-		  if (preg_match_all("#{sliders}(.*?){/sliders}#s", $buffer, $matches, PREG_PATTERN_ORDER) > 0) 
+		  if (preg_match_all("#{sliders}(.*?){/sliders}#s", $buffer, $matches, PREG_PATTERN_ORDER) > 0)
 		  {
 			  $sigcount = -1;
+			  
 			  foreach ($matches[0] as $match) 
 			  {
+			  	
+			  	$html .= implode("; ",$match);
 				$sigcount++;
-				$_images_dir_ = preg_replace("/{.+?}/", "", $match);		
+				$_images_dir_ = preg_replace("/{.+?}/", "", $match);
+					
 				$params_images = explode(',', $_images_dir_);
 				$_images_dir_ = (count($params_images) > 0)? $params_images[0] : $_images_dir_;
 				$inView = (count($params_images) > 0 && isset($params_images[1]))? $params_images[1] : false;
@@ -448,8 +452,8 @@ class contentProcessor
 				if($noimage) 
 				{
 					 $id = uniqid('carousel_');
-				   	 $html .= '<div id="'.$id.'">';
-				   	 $html .= '<ul>';
+				   	 //$html .= '<div>';
+				   	 $html .= '<ul id="'.$id.'" class="jcarousel-skin-ie7">';
 				     ////for($a = 0; $a < $noimage; $a++)
 				     $i = 0;
 				     foreach($images as $a => $image) 
@@ -464,8 +468,8 @@ class contentProcessor
 					     }
 				     }
 				     $html .= '</ul>';
-					 $html .= '</div>';
-					 $html .= '<script type="text/javascript">';
+					 //$html .= '</div>';
+					 /*$html .= '<script type="text/javascript">';
 					 $html .= "\r\n$(function(){\r\n";
 					 $html .= "$('#".$id."').infiniteCarousel(";
 					 $html .= (count($params_images) > 1)? '{' : '';
@@ -473,6 +477,13 @@ class contentProcessor
 					 $html .= ($advance)? "advance: ".$advance.",\r\n" : '';
 					 $html .= (count($params_images) > 1)? '}' : '';
 					 $html .= ");\r\n}\r\n);";
+					 $html .= "</script>\r\n";*/
+					 
+					 $html .= '<script type="text/javascript">';
+					 $html .= "\r\njQuery(document).ready(function(){\r\n";
+					 $html .= "$('#".$id."').jcarousel({
+    							wrap: 'circular'
+    							});\r\n});\r\n"; 
 					 $html .= "</script>\r\n";
 	
 			   }
@@ -617,7 +628,16 @@ class contentProcessor
                        $html .= '<td class="newsheadline">';
                        if(file_exists($path.$slash.$item['headline'].".html"))
 				       {
-					       $html .= file_get_contents($path.$slash.$item['headline'].".html");
+		       				$headline = file_get_contents($path.$slash.$item['headline'].".html");
+		       				if(preg_match('/{sliders}.+?{\/sliders}/sm', $headline))
+							{
+								$html .= $this->_getSliders($headline);
+							}
+							else
+							{
+								$html .= $headline;	
+							}
+					       	
                        }
                        if($item['article'])
                        {
