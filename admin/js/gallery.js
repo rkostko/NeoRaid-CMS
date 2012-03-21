@@ -12,7 +12,7 @@ function delImg(obj)
             success: function(responce)
             {
                 imgContainer.remove();
-                $("#contentLeft ul").sortable("refresh");
+                $("#contentLeft ul.thumbnails").sortable("refresh");
             }
         });
 }
@@ -172,11 +172,12 @@ $(document).ready(function()
 	{
 	   $(function() 
 		          {
-					$("#contentLeft ul").sortable({ 
+					$("#contentLeft ul.thumbnails").sortable({ 
                                                     opacity: 0.6, 
                                                     cursor: 'move', 
                                                     update: function()
                                 					{
+                                						alert("here");
                                 						var order = $(this).sortable("serialize") + '&action=updateRecordsListings';
                                 						$.post("imagesort.php", order, function(theResponse)
                                 						{
@@ -225,7 +226,7 @@ $(document).ready(function()
 	var uploader = '<li class="sig_cont" style="border: medium none; background: transparent url(upload.png) no-repeat; width:152px; height:120px; overflow:hidden;">'
     +'<div id="file-uploader" rel="'+_images_dir_+'"></div>'
     +'</li>';	
-	$(uploader).appendTo("#contentLeft ul");
+	$(uploader).appendTo("#contentLeft ul.thumbnails");
     
     $("img[id^='unlink_']").each(function()
     {
@@ -354,6 +355,6 @@ function showThumb(data)
 	//var img = $(html).appendTo("#contentLeft ul");
     var img = $(html).insertBefore("#contentLeft ul > li:last-child");
 						
-	$("#contentLeft ul").sortable("refresh");		
+	$("#contentLeft ul.thumbnails").sortable("refresh");		
 }
 

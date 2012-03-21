@@ -155,8 +155,8 @@ class contentProcessor
                         $html .= $article;
                      }
                      $html .= '</div>';
-				   	 $html .= '<ul>';
-				   	 
+				   	 $html .= '<ul class="thumbnails">';
+  	 	 			
 
 				     foreach($images as $a => $image) 
 				     {

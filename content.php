@@ -522,6 +522,10 @@ class contentProcessor
 						$object['target'] = stripslashes($row['target']);
 						$object['width'] = $row['width'];
 						$object['height'] = $row['height'];
+						$object['crop_x'] = $row['crop_x'];
+						$object['crop_y'] = $row['crop_y'];
+						$object['crop_width'] = $row['crop_width'];
+						$object['crop_height'] = $row['crop_height'];
 						$object['container'] = $row['container'];
 						$object['class'] = $row['class'];
                         $object['text'] = stripslashes($row['text']);	
@@ -532,7 +536,24 @@ class contentProcessor
 					$html .= (!empty($object['url']))? '<a href="http://'.$object['url'].'"' : '';
 					$html .= (!empty($object['target']) && !empty($object['url']))? ' target="'.$object['target'].'"' : '';
                     $html .= (!empty($object['url']))? '>' : '';
-					$html .= (!empty($object['path']))? '<img src="galleries/'.$object['path'].'"  style="border: none"/>' : '';
+					//$html .= (!empty($object['path']))? '<img src="galleries/'.$object['path'].'"  style="border: none"/>' : '';
+					
+					if(!empty($object['path']))
+					{
+						$path_arr = explode(".", $object['path']);
+						$ext = ".".array_pop($path_arr);
+						$object['path'] = implode($path_arr);						
+						$html .= '<img src="image.php?img='.$object['path'];
+						$html .= (!empty($object['width']))? ','.$object['width'] : '';
+						$html .= (!empty($object['height']))? ','.$object['height'] : '';
+						$html .= (!empty($object['crop_x']))? ','.$object['crop_x'] : '';
+						$html .= (!empty($object['crop_y']))? ','.$object['crop_y'] : '';
+						$html .= (!empty($object['crop_width']))? ','.$object['crop_width'] : '';
+						$html .= (!empty($object['crop_height']))? ','.$object['crop_height'] : '';
+						$html .= $ext;
+						$html .='" alt="" border="0"/>';	
+					}
+					
 					$html .= (!empty($object['url']))? '</a>' : '';
                     $html .= '</div>';
                     $html .= (!empty($object['text']))? '<div class="text">'.$object['text'].'</div>' : '';

@@ -148,7 +148,7 @@ color:#222222;
 	margin-left:-40px;
 }
 
-#contentLeft li {
+#contentLeft ul.thumbnails li {
 	list-style: none;
 	margin: 0 0 4px 4px;
 	background-color:#ffffff;
