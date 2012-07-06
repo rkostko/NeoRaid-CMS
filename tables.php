@@ -12,6 +12,7 @@ $init = new contentProcessor();
 <title>NeoRaid Rally Team</title>
 <link rel="stylesheet" type="text/css" href="css/main.css" />
 <link rel="stylesheet" type="text/css" href="css/picbox.css" />
+<link rel="stylesheet" type="text/css" href="css/articles.css" />
 
 <!-- link rel="stylesheet" type="text/css" href="css/jqueryslidemenu.css" / -->
 <link rel="stylesheet" type="text/css" href="css/ddsmoothmenu.css" />

@@ -1,8 +1,8 @@
-.newsitem {margin-bottom: 5px;}
-table.newstable {width: 100%; border: 1px solid #cccccc; font: 10pt normal Verdana, Helvetica, sans-serif;}
+.newsitem {margin-bottom: 5px; border: 1px solid #cccccc;}
+table.newstable {width: 100%;  font: 10pt normal Verdana, Helvetica, sans-serif;}
 td.newsitem{margin-bottom: 10px;} 
 .newsdate{color:#DD0000; float:left; font-weight:normal; width:auto;}
-.newstitle{font-weight: bold; text-align: center; width:90%;}
+.newstitle{font-weight: bold; text-align: center; width:100%;}
 td.newsheadline{text-align: justify; width:90%;}
 td.newsobject{padding-right: 5px; width:10%;}
 div.newsmore{width: 100%; text-align: right;}

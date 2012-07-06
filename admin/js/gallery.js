@@ -177,7 +177,7 @@ $(document).ready(function()
                                                     cursor: 'move', 
                                                     update: function()
                                 					{
-                                						alert("here");
+                                						//alert("here");
                                 						var order = $(this).sortable("serialize") + '&action=updateRecordsListings';
                                 						$.post("imagesort.php", order, function(theResponse)
                                 						{

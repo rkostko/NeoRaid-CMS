@@ -63,12 +63,7 @@ $gallery .= (isset($ARG2) && !empty($ARG2))? ','.$ARG2 : '';
 $gallery .= (isset($ARG3) && !empty($ARG3))? ','.$ARG3 : '';
 if(!empty($gallery))
 {
-	/*if(!isset($ARG2) || (int)$ARG2 == 1)
-	{		
-		echo "\n{articles}";
-		echo (strpos($gallery, ',') !== false)? substr($gallery, 0, strpos($gallery, ',')) : $gallery;
-		echo "{/articles}\n"; 
-	}*/
+
 	print("\n{galleries}");
 	echo $gallery;
 	print("{/galleries}\n");
